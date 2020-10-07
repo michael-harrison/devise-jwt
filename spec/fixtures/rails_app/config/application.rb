@@ -28,3 +28,4 @@ module RailsApp
     config.api_only = true
   end
 end
+require_relative "../lib/auth_failure"

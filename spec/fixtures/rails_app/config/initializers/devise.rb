@@ -281,4 +281,7 @@ Devise.setup do |config|
       jwt_with_denylist_user: %i[json xml]
     }
   end
+  config.warden do |manager|
+    manager.failure_app = AuthFailure
+  end
 end
