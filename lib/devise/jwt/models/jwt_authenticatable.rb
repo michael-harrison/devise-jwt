@@ -18,7 +18,7 @@ module Devise
 
       included do
         def self.find_for_jwt_authentication(sub)
-          find_by(primary_key => sub)
+          where(primary_key => sub).first
         end
       end
 

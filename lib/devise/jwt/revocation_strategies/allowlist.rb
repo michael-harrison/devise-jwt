@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'active_support/concern'
+require_relative '../../active_support/concern'
 
 module Devise
   module JWT
@@ -32,8 +33,8 @@ module Devise
 
           # @see Warden::JWTAuth::Interfaces::RevocationStrategy#revoke_jwt
           def self.revoke_jwt(payload, user)
-            jwt = user.allowlisted_jwts.find_by(payload.slice('jti', 'aud'))
-            jwt.destroy! if jwt
+            jwt = user.allowlisted_jwts.where(payload.slice('jti', 'aud')).first
+            jwt.destroy if jwt
           end
         end
 
