@@ -10,3 +10,5 @@
 .overcommit_gems.rb.lock
 *.log
 *sqlite3-journal
+.ruby-gemset
+.ruby-version
