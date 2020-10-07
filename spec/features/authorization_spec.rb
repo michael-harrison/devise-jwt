@@ -133,7 +133,7 @@ describe 'Authorization', type: :request do
 
     it 'unauthorizes' do
       auth = sign_in(jwt_with_jti_matcher_user_session_path, user_params)
-      jwt_with_denylist_user.update(id: user.id)
+      jwt_with_denylist_user.update_attribute(:id, user.id)
 
       get_with_auth('/jwt_with_denylist_user_auth_action', auth)
 
