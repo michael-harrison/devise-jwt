@@ -21,21 +21,19 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'devise', '~> 4.0'
-  spec.add_dependency 'warden-jwt_auth', '~> 0.5'
+  spec.add_dependency 'devise', '~> 3.5'
+  spec.add_dependency 'warden-jwt_auth', '~> 0.4.0'
 
-  spec.add_development_dependency "bundler", "> 1"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "pry-byebug", "~> 3.7"
+  # spec.add_development_dependency "bundler", "> 1"
+  spec.add_development_dependency "rake", "12.3.3"
   # Needed to test the rails fixture application
-  spec.add_development_dependency 'rails', '~> 6.0'
-  spec.add_development_dependency 'sqlite3', '~> 1.3'
-  spec.add_development_dependency 'rspec-rails', '~> 4.0'
+  spec.add_development_dependency 'rails', '~> 3.2.22'
+  spec.add_development_dependency 'sqlite3', '~> 1.3.5'
+  spec.add_development_dependency 'rspec-rails', '~> 3.7.2'
+  spec.add_development_dependency 'test-unit', '~> 3.0'
   # Cops
-  spec.add_development_dependency 'rubocop', '~> 0.87'
-  spec.add_development_dependency 'rubocop-rspec', '~> 1.42'
+  spec.add_development_dependency 'rubocop', '~> 0.81'
+  spec.add_development_dependency 'rubocop-rspec', '~> 1.38.0'
   # Test reporting
-  spec.add_development_dependency 'simplecov', '0.17'
-  spec.add_development_dependency 'codeclimate-test-reporter', '~> 1.0'
+  spec.add_development_dependency 'simplecov', '0.10.0'
 end
