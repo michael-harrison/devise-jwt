@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-rails', '~> 3.7.2'
   spec.add_development_dependency 'test-unit', '~> 3.0'
   # Cops
-  spec.add_development_dependency 'rubocop', '~> 0.81'
+  spec.add_development_dependency 'rubocop', '~> 0.80.1'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.38.0'
   # Test reporting
   spec.add_development_dependency 'simplecov', '0.10.0'
