@@ -10,7 +10,7 @@ shared_context 'feature' do
 
   def sign_in(session_path, params, format: nil)
     path = format ? session_path + ".#{format}" : session_path
-    post(path, params: params)
+    post(path, params)
     response.headers['Authorization']
   end
 
