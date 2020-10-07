@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   include ActionController::MimeResponds
 
   respond_to :json
@@ -6,24 +6,24 @@ class ApplicationController < ActionController::API
   def jwt_with_jti_matcher_user_auth_action
     head :ok
   end
-  before_action :authenticate_jwt_with_jti_matcher_user!,
+  before_filter :authenticate_jwt_with_jti_matcher_user!,
                 only: :jwt_with_jti_matcher_user_auth_action
 
   def jwt_with_denylist_user_auth_action
     head :ok
   end
-  before_action :authenticate_jwt_with_denylist_user!,
+  before_filter :authenticate_jwt_with_denylist_user!,
                 only: :jwt_with_denylist_user_auth_action
 
   def jwt_with_allowlist_user_auth_action
     head :ok
   end
-  before_action :authenticate_jwt_with_allowlist_user!,
+  before_filter :authenticate_jwt_with_allowlist_user!,
                 only: :jwt_with_allowlist_user_auth_action
 
   def jwt_with_null_user_auth_action
     head :ok
   end
-  before_action :authenticate_jwt_with_null_user!,
+  before_filter :authenticate_jwt_with_null_user!,
                 only: :jwt_with_null_user_auth_action
 end
