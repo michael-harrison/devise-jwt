@@ -27,13 +27,13 @@ describe Devise::JWT::RevocationStrategies::Denylist do
     it 'adds payload jti to the denylist' do
       strategy.revoke_jwt(payload, :whatever)
 
-      expect(strategy.find_by(jti: '123')).not_to be_nil
+      expect(strategy.where(jti: '123').first).not_to be_nil
     end
 
     it 'populates exp (expiration_time)' do
       strategy.revoke_jwt(payload, :whatever)
 
-      exp = strategy.find_by(jti: '123').exp
+      exp = strategy.where(jti: '123').first.exp
       expect(exp).equal? Time.at(payload['exp'].to_i)
     end
 
