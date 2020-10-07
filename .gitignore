@@ -12,3 +12,4 @@
 *sqlite3-journal
 .ruby-gemset
 .ruby-version
+.idea
