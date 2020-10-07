@@ -8,7 +8,7 @@ before_install:
   - bundle _1.17.2_ install
 script:
   - bundle exec rspec
-  - bundle exec rubocop
+#  - bundle exec rubocop
 jobs:
   allow_failures:
     - rvm: ruby-head
