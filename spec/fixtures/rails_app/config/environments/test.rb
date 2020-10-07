@@ -27,4 +27,5 @@ RailsApp::Application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.secret_token = "some secret phrase of at least 30 characters"
 end
